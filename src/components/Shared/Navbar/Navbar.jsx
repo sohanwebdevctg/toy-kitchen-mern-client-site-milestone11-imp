@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <div>
+    <div className='hidden'>
       {/* desktop site start */}
       <div className='bg-gray-400'>
         <div className='container mx-auto'>
