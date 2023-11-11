@@ -10,7 +10,9 @@ const MainLayout = () => {
       <Navbar></Navbar>
       {/* this is navbar section end */}
       {/* this is router section start */}
-      <Outlet></Outlet>
+      <div className='md:min-h-[520px]'>
+        <Outlet></Outlet>
+      </div>
       {/* this is router section end */}
       {/* this is footer section start */}
       <Footer></Footer>
