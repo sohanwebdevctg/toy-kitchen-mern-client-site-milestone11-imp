@@ -1,11 +1,9 @@
-import { useNavigate, useRouteError } from 'react-router-dom';
+import { Link, useRouteError } from 'react-router-dom';
 import './ErrorPage.css'
 
 const ErrorPage = () => {
 
   const error = useRouteError();
-
-  const navigate = useNavigate()
 
 
   return (
@@ -20,7 +18,8 @@ const ErrorPage = () => {
           <p className='text-red-500 md:my-4 md:text-2xl'>
             <i>{error.statusText || error.message}</i>
           </p>
-          <button onClick={() => {navigate(-1)}} className='bg-blue-500 text-white py-2 px-6 rounded md:font-bold'>Back</button>
+          <Link to="/">
+            <button className='bg-blue-500 text-white py-2 px-6 rounded md:font-bold'>Back</button></Link>
         </div>
           {/* description section end */}
         </div>
