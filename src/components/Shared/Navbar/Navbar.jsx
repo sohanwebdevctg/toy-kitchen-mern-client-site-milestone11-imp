@@ -1,10 +1,10 @@
 import './Navbar.css';
 import logo from '../../../../public/logo/toyKitchenImage.jpg';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <div className='hidden'>
+    <div>
       {/* desktop site start */}
       <div className='bg-gray-400'>
         <div className='container mx-auto'>
@@ -25,7 +25,9 @@ const Navbar = () => {
             </div>
             {/* link site end */}
             {/* login site start */}
+            <Link to="/login">
             <button className='bg-red-600 py-2 px-3 rounded'>LogIn</button>
+            </Link>
             {/* login site end */}
           </div>
         </div>

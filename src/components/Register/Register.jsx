@@ -5,8 +5,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
 
-  const {name} = useContext(AuthContext)
-  console.log(name)
+  const {registerUser} = useContext(AuthContext)
 
   const [error, setError] = useState();
 
@@ -32,8 +31,15 @@ const Register = () => {
       setError('please provide minimum 8 characters')
     }
 
+    registerUser(email, password)
+    .then(result => {
+      const user = result.user;
+      console.log(user)
+    })
+    .catch(error => {
+      console.log(error.message)
+    })
 
-    console.log(name, email, image, password)
 
   }
 
