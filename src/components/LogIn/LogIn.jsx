@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './LogIn.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const LogIn = () => {
 
-  const [error, setError] = useState();
+  const {loginUser} = useContext(AuthContext);
+  let navigate =  useNavigate()
+  let location = useLocation()
+
+  const [errors, setError] = useState(null);
+
+  const from = location.state?.from?.pathname || "/";
 
   const logInBtn = (event) => {
     event.preventDefault();
@@ -20,8 +28,27 @@ const LogIn = () => {
       setError('please provide minimum 8 characters')
     }
 
-
-    console.log( email, password)
+    loginUser(email, password)
+    .then(result => {
+      const user = result.user;
+      if(user){
+        Swal.fire({
+          title: "Good job!",
+          text: "You Data added successfully!",
+          icon: "success"
+        });
+        navigate(from, {replace : true})
+      }
+    })
+    .catch(error => {
+      if(error){
+        Swal.fire({
+          title: "Sorry!",
+          text: "your data invalid!",
+          icon: "error"
+        });
+      }
+    })
 
   }
 
@@ -43,6 +70,7 @@ const LogIn = () => {
               {/* password section start */}
               <input type='submit' value="LogIn" required className='p-2 mt-3 w-full bg-red-700 text-white'></input><br></br>
               {/* password section end */}
+              <p className='text-red-700'>{errors ? errors : ''}</p>
               <p className='text-white mt-2'>If you have no account? please <Link to="/register" className='text-red-700'>Register</Link></p>
             </form>
           </div>

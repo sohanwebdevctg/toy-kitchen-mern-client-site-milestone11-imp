@@ -5,6 +5,7 @@ import Blogs from "../components/Blogs/Blogs.jsx";
 import Home from "../components/Home/Home.jsx";
 import Register from "../components/Register/Register.jsx";
 import LogIn from "../components/LogIn/LogIn.jsx";
+import PrivateRoute from "./PrivateRoute.jsx";
 
 
 const router = createBrowserRouter([
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path : '/blogs',
-        element : <Blogs></Blogs>
+        element : <PrivateRoute><Blogs></Blogs></PrivateRoute>
       },
       {
         path : '/login',

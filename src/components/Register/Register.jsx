@@ -1,13 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const Register = () => {
 
-  const {registerUser} = useContext(AuthContext)
+  const {registerUser, userDetails} = useContext(AuthContext)
 
-  const [error, setError] = useState();
+  const navigate = useNavigate()
+
+  const [errors, setError] = useState(null);
 
   const registerBtn = (event) => {
     event.preventDefault();
@@ -18,12 +21,9 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    if(name === null){
-      setError('please provide your name')
-    }
-    if(image === null){
-      setError('please provide image link')
-    }
+    console.log(name, image)
+
+  
     if(email === null){
       setError('please provide your email address')
     }
@@ -34,10 +34,24 @@ const Register = () => {
     registerUser(email, password)
     .then(result => {
       const user = result.user;
-      console.log(user)
+      userDetails(result.user, name, image)
+      if(user){
+        Swal.fire({
+          title: "Good job!",
+          text: "You Data added successfully!",
+          icon: "success"
+        });
+        navigate('/login')
+      }
     })
     .catch(error => {
-      console.log(error.message)
+      if(error){
+        Swal.fire({
+          title: "Sorry!",
+          text: "your data invalid!",
+          icon: "error"
+        });
+      }
     })
 
 
@@ -66,6 +80,7 @@ const Register = () => {
               {/* password section start */}
               <input type='submit' value="Register" required className='p-2 mt-3 w-full bg-red-700 text-white'></input><br></br>
               {/* password section end */}
+              <p className='text-red-700'>{errors ? errors : ''}</p>
               <p className='text-white mt-2'>If you have any account? please <Link to="/login" className='text-red-700'>LogIn</Link></p>
             </form>
           </div>

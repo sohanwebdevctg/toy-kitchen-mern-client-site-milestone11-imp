@@ -1,8 +1,23 @@
 import './Navbar.css';
 import logo from '../../../../public/logo/toyKitchenImage.jpg';
 import { Link, NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from './../../../Provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const Navbar = () => {
+
+  const {userData, logOut} = useContext(AuthContext)
+  
+  const outBtn = () => {
+    logOut();
+    Swal.fire({
+      title: "Success",
+      text: "You Are logOut",
+      icon: "success"
+    });
+  }
+
   return (
     <div>
       {/* desktop site start */}
@@ -25,9 +40,21 @@ const Navbar = () => {
             </div>
             {/* link site end */}
             {/* login site start */}
-            <Link to="/login">
-            <button className='bg-red-600 py-2 px-3 rounded'>LogIn</button>
-            </Link>
+            <div>
+              {
+                  userData ? <div className='flex gap-4 items-center'>
+                  <div>
+                    <img className='w-10 h-10 rounded-full' src={userData && userData ? userData?.photoURL : ''} title={userData && userData ? userData?.displayName : 'No-Data'}></img>
+                  </div>
+                    <button onClick={outBtn} className='bg-red-600 py-2 px-3 rounded'>LogOut</button>
+                  </div> 
+                : <div>
+                <Link to="/login">
+                  <button className='bg-red-600 py-2 px-3 rounded'>LogIn</button>
+                  </Link>
+                </div>
+              }
+            </div>
             {/* login site end */}
           </div>
         </div>
