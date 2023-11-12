@@ -56,7 +56,7 @@ const Register = () => {
               {/* password section start */}
               <input type='submit' value="Register" required className='p-2 mt-3 w-full bg-red-700 text-white'></input><br></br>
               {/* password section end */}
-              <p className='text-white mt-2'>If you have any account? please <Link to="/" className='text-red-700'>LogIn</Link></p>
+              <p className='text-white mt-2'>If you have any account? please <Link to="/login" className='text-red-700'>LogIn</Link></p>
             </form>
           </div>
         </div>
