@@ -7,6 +7,8 @@ const Home = () => {
       {/* banner section start */}
       <Banner></Banner>
       {/* banner section end */}
+      {/* gallery section start */}
+      {/* gallery section end */}
     </div>
   );
 };
