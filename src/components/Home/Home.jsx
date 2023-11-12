@@ -1,4 +1,5 @@
 import Banner from '../Banner/Banner';
+import OurGallery from '../OurGallery/OurGallery';
 import './Home.css';
 
 const Home = () => {
@@ -7,8 +8,9 @@ const Home = () => {
       {/* banner section start */}
       <Banner></Banner>
       {/* banner section end */}
-      {/* gallery section start */}
-      {/* gallery section end */}
+      {/* ourGallery section start */}
+      <OurGallery></OurGallery>
+      {/* ourGallery section end */}
     </div>
   );
 };
