@@ -3,15 +3,17 @@ import './Register.css';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
+import google from '../../../public/logo/google.png'
 
 const Register = () => {
 
-  const {registerUser, userDetails} = useContext(AuthContext)
+  const {registerUser, userDetails, googleLogIn} = useContext(AuthContext)
 
   const navigate = useNavigate()
 
   const [errors, setError] = useState(null);
 
+  // registerBtn
   const registerBtn = (event) => {
     event.preventDefault();
 
@@ -21,9 +23,6 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(name, image)
-
-  
     if(email === null){
       setError('please provide your email address')
     }
@@ -57,6 +56,31 @@ const Register = () => {
 
   }
 
+  // googleLogIn
+  const googleLogBtn = () => {
+    googleLogIn()
+    .then(result => {
+      const user = result.user;
+      if(user){
+        Swal.fire({
+          title: "Good job!",
+          text: "You Data added successfully!",
+          icon: "success"
+        });
+        navigate('/login')
+      }
+    })
+    .catch(error => {
+      if(error){
+        Swal.fire({
+          title: "Sorry!",
+          text: "your data invalid!",
+          icon: "error"
+        });
+      }
+    })
+  }
+
   return (
     <div>
       {/* register form section start */}
@@ -82,6 +106,7 @@ const Register = () => {
               {/* password section end */}
               <p className='text-red-700'>{errors ? errors : ''}</p>
               <p className='text-white mt-2'>If you have any account? please <Link to="/login" className='text-red-700'>LogIn</Link></p>
+              <p className='mt-2 flex justify-center text-white items-center bg-red-700 p-2 md:w-28 w-24 rounded-full text-center mx-auto gap-1' onClick={googleLogBtn}><span>Google</span><img src={google} className='md:w-10 md:h-10 w-6 h-6 rounded-full'></img></p>
             </form>
           </div>
         </div>

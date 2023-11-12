@@ -1,6 +1,6 @@
 import './Navbar.css';
 import logo from '../../../../public/logo/toyKitchenImage.jpg';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from './../../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
@@ -8,6 +8,7 @@ import Swal from 'sweetalert2'
 const Navbar = () => {
 
   const {userData, logOut} = useContext(AuthContext)
+  const navigate = useNavigate()
   
   const outBtn = () => {
     logOut();
@@ -16,6 +17,7 @@ const Navbar = () => {
       text: "You Are logOut",
       icon: "success"
     });
+    navigate('/')
   }
 
   return (

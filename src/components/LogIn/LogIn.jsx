@@ -3,10 +3,11 @@ import './LogIn.css'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
+import google from '../../../public/logo/google.png'
 
 const LogIn = () => {
 
-  const {loginUser} = useContext(AuthContext);
+  const {loginUser,googleLogIn} = useContext(AuthContext);
   let navigate =  useNavigate()
   let location = useLocation()
 
@@ -52,6 +53,31 @@ const LogIn = () => {
 
   }
 
+    // googleLogIn
+    const googleLogBtn = () => {
+      googleLogIn()
+      .then(result => {
+        const user = result.user;
+        if(user){
+          Swal.fire({
+            title: "Good job!",
+            text: "You Data added successfully!",
+            icon: "success"
+          });
+          navigate('/')
+        }
+      })
+      .catch(error => {
+        if(error){
+          Swal.fire({
+            title: "Sorry!",
+            text: "your data invalid!",
+            icon: "error"
+          });
+        }
+      })
+    }
+
 
   return (
     <div>
@@ -72,6 +98,7 @@ const LogIn = () => {
               {/* password section end */}
               <p className='text-red-700'>{errors ? errors : ''}</p>
               <p className='text-white mt-2'>If you have no account? please <Link to="/register" className='text-red-700'>Register</Link></p>
+              <p className='mt-2 flex justify-center text-white items-center bg-red-700 p-2 md:w-28 w-24 rounded-full text-center mx-auto gap-1' onClick={googleLogBtn}><span>Google</span><img src={google} className='md:w-10 md:h-10 w-6 h-6 rounded-full'></img></p>
             </form>
           </div>
         </div>

@@ -1,10 +1,13 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword,  signOut,  updateProfile} from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword,  signInWithPopup,  signOut,  updateProfile, } from "firebase/auth";
 import app from "../firebase/firebase.config";
+
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 export const AuthContext = createContext(null)
 const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
 
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({children}) => {
@@ -37,6 +40,11 @@ const AuthProvider = ({children}) => {
     })
   }
 
+  // googleLogin
+  const googleLogIn = () => {
+    return signInWithPopup(auth, provider);
+  }
+
   //userChange
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (currentUser) => {
@@ -56,7 +64,8 @@ const AuthProvider = ({children}) => {
     userDetails,
     userData,
     logOut,
-    loader
+    loader,
+    googleLogIn
   }
 
 
