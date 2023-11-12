@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import './Register.css';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
+
+  const {name} = useContext(AuthContext)
+  console.log(name)
 
   const [error, setError] = useState();
 
@@ -16,16 +20,16 @@ const Register = () => {
     const password = form.password.value;
 
     if(name === null){
-     setError('please provide your name')
+      setError('please provide your name')
     }
     if(image === null){
-     setError('please provide image link')
+      setError('please provide image link')
     }
     if(email === null){
-       setError('please provide your email address')
+      setError('please provide your email address')
     }
     if(password > 8){
-       setError('please provide minimum 8 characters')
+      setError('please provide minimum 8 characters')
     }
 
 
