@@ -29,17 +29,17 @@ const ShopCategory = () => {
       <Tabs>
         {/* header section start */}
         <TabList>
-          <Tab>Kitchen Sink</Tab>
-          <Tab>Kitchen Play Set</Tab>
-          <Tab>Cook Ware</Tab>
-          <Tab>Kitchen Accessories</Tab>
-          <Tab>Mini Kitchen</Tab>
+          <Tab><span className='text-xs md:text-xl'>Kitchen Sink</span></Tab>
+          <Tab><span className='text-xs md:text-xl'>Kitchen Play Set</span></Tab>
+          <Tab><span className='text-xs md:text-xl'>Cook Ware</span></Tab>
+          <Tab><span className='text-xs md:text-xl'>Kitchen Accessories</span></Tab>
+          <Tab><span className='text-xs md:text-xl'>Mini Kitchen</span></Tab>
         </TabList>
         {/* header section end */}
 
         {/* body section start */}
         <TabPanel>
-          <div className='grid md:grid-cols-2 grid-cols-1 md:mt-3 mt-2'>
+          <div className='md:flex md:mt-3 mt-2'>
             {
               kitchenSink.map((category) => <Category
               key={category._id}
@@ -49,7 +49,7 @@ const ShopCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-        <div className='grid md:grid-cols-2 grid-cols-1 md:mt-3 mt-2'>
+          <div className='md:flex md:mt-3 mt-2'>
             {
               kitchenPlaySet.map((category) => <Category
               key={category._id}
@@ -59,7 +59,7 @@ const ShopCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-        <div className='grid md:grid-cols-2 grid-cols-1 md:mt-3 mt-2'>
+          <div className='md:flex md:mt-3 mt-2'>
             {
               cookWare.map((category) => <Category
               key={category._id}
@@ -69,7 +69,7 @@ const ShopCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className='grid md:grid-cols-2 grid-cols-1 md:mt-3 mt-2'>
+          <div className='md:flex md:mt-3 mt-2'>
             {
               kitchenAccessories.map((category) => <Category
               key={category._id}
@@ -79,7 +79,7 @@ const ShopCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className='grid md:grid-cols-2 grid-cols-1 md:mt-3 mt-2'>
+          <div className='md:flex md:mt-3 mt-2'>
             {
               miniKitchen.map((category) => <Category
               key={category._id}
