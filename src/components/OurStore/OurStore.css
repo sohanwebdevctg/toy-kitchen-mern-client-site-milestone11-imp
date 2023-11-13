@@ -1,0 +1,25 @@
+.ourStoreCon{
+  background-image: url('../../../public/accessories/accessories1.webp');
+  background-position: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+}
+.ourStoreSec{
+  z-index: 1;
+}
+.ourStoreSec::after{
+  content: '';
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
