@@ -1,3 +1,4 @@
+import AboutOurStore from '../AboutOurStore/AboutOurStore';
 import Banner from '../Banner/Banner';
 import OurGallery from '../OurGallery/OurGallery';
 import OurStore from '../OurStore/OurStore';
@@ -15,6 +16,9 @@ const Home = () => {
       {/* outStore section start */}
       <OurStore></OurStore>
       {/* outStore section end */}
+      {/* AboutOurStore section start */}
+      <AboutOurStore></AboutOurStore>
+      {/* AboutOurStore section end */}
     </div>
   );
 };
