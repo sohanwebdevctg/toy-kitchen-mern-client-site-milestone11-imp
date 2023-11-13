@@ -15,7 +15,7 @@ import brands10 from '../../../public/brand/brand10.png'
 const OurBrands = () => {
   return (
     <div className='my-10'>
-      {/* outBrands section start */}
+      {/* ourBrands section start */}
       <div className='container mx-auto'>
         {/* title section start */}
         <div className='text-center'>
@@ -78,7 +78,7 @@ const OurBrands = () => {
         </div>
         {/* brand section end */}
       </div>
-      {/* outBrands section end */}
+      {/* ourBrands section end */}
     </div>
   );
 };

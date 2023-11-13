@@ -1,6 +1,7 @@
 import AboutOurStore from '../AboutOurStore/AboutOurStore';
 import Banner from '../Banner/Banner';
 import OurBrands from '../OurBrands/OurBrands';
+import OurFeaturesProducts from '../OurFeaturesProducts/OurFeaturesProducts';
 import OurGallery from '../OurGallery/OurGallery';
 import OurStore from '../OurStore/OurStore';
 import './Home.css';
@@ -17,6 +18,9 @@ const Home = () => {
       {/* outStore section start */}
       <OurStore></OurStore>
       {/* outStore section end */}
+      {/* ourFeaturesProducts section start */}
+      <OurFeaturesProducts></OurFeaturesProducts>
+      {/* ourFeaturesProducts section end */}
       {/* aboutOurStore section start */}
       <AboutOurStore></AboutOurStore>
       {/* aboutOurStore section end */}
