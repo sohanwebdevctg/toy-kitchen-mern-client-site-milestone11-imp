@@ -1,12 +1,19 @@
 import './Gallery.css';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 // eslint-disable-next-line react/prop-types
 const Gallery = ({gallery}) => {
 
+  useEffect(() => {
+    Aos.init()
+  },[])
+
   // eslint-disable-next-line react/prop-types
   const {image, name, type} = gallery;
   return (
-    <div className='border-black border relative'>
+    <div className='border-black border relative' data-aos="fade-right">
       {/* image section start */}
       <img src={image} className='w-full h-64 p-1'></img>
       {/* image section end */}

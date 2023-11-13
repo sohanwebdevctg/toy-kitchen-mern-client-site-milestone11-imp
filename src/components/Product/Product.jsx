@@ -3,10 +3,11 @@ import './Product.css';
 // eslint-disable-next-line react/prop-types
 const Product = ({product}) => {
 
+  // eslint-disable-next-line react/prop-types
   const {name, details, image} = product;
 
   return (
-    <div>
+    <div className='mt-3'>
       {/* product section start */}
       <div>
         <img src={image} className='w-full md:h-72'></img>

@@ -1,4 +1,7 @@
 import './OurBrands.css';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 import brands1 from '../../../public/brand/brand1.png'
 import brands2 from '../../../public/brand/brand2.png'
@@ -13,6 +16,11 @@ import brands10 from '../../../public/brand/brand10.png'
 
 
 const OurBrands = () => {
+
+  useEffect(() => {
+    Aos.init({duration : 1000})
+  },[])
+
   return (
     <div className='my-10'>
       {/* ourBrands section start */}
@@ -26,52 +34,52 @@ const OurBrands = () => {
         {/* brand section start */}
         <div className='grid md:grid-cols-10 grid-cols-2 md:gap-3 gap-2 md:mt-3 mt-2'>
           {/* brands1 start */}
-          <div>
+          <div data-aos="fade-right">
             <img src={brands1}></img>
           </div>
           {/* brands1 end */}
           {/* brands2 start */}
-          <div>
+          <div data-aos="fade-up">
             <img src={brands2}></img>
           </div>
           {/* brands2 end */}
           {/* brands3 start */}
-          <div>
+          <div data-aos="fade-down">
             <img src={brands3}></img>
           </div>
           {/* brands3 end */}
           {/* brands4 start */}
-          <div>
+          <div data-aos="fade-right">
             <img src={brands4}></img>
           </div>
           {/* brands4 end */}
           {/* brands5 start */}
-          <div>
+          <div data-aos="fade-up">
             <img src={brands5}></img>
           </div>
           {/* brands5 end */}
           {/* brands6 start */}
-          <div>
+          <div data-aos="fade-down">
             <img src={brands10}></img>
           </div>
           {/* brands6 end */}
           {/* brands7 start */}
-          <div>
+          <div data-aos="fade-right">
             <img src={brands7}></img>
           </div>
           {/* brands7 end */}
           {/* brands8 start */}
-          <div>
+          <div data-aos="fade-up">
             <img src={brands8}></img>
           </div>
           {/* brands8 end */}
           {/* brands9 start */}
-          <div>
+          <div data-aos="fade-down">
             <img src={brands9}></img>
           </div>
           {/* brands9 end */}
           {/* brands10 start */}
-          <div>
+          <div data-aos="fade-right">
             <img src={brands6}></img>
           </div>
           {/* brands10 end */}

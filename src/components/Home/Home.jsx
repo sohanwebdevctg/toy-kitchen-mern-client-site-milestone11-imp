@@ -4,6 +4,7 @@ import OurBrands from '../OurBrands/OurBrands';
 import OurFeaturesProducts from '../OurFeaturesProducts/OurFeaturesProducts';
 import OurGallery from '../OurGallery/OurGallery';
 import OurStore from '../OurStore/OurStore';
+import ShopByCategory from '../ShopByCategory/ShopByCategory';
 import './Home.css';
 
 const Home = () => {
@@ -21,6 +22,9 @@ const Home = () => {
       {/* ourFeaturesProducts section start */}
       <OurFeaturesProducts></OurFeaturesProducts>
       {/* ourFeaturesProducts section end */}
+      {/* shopByCategory section start */}
+      <ShopByCategory></ShopByCategory>
+      {/* shopByCategory section end */}
       {/* aboutOurStore section start */}
       <AboutOurStore></AboutOurStore>
       {/* aboutOurStore section end */}
@@ -32,3 +36,4 @@ const Home = () => {
 };
 
 export default Home;
+
