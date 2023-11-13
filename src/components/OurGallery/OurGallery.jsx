@@ -21,7 +21,7 @@ const OurGallery = () => {
         {/* title section start */}
         <div>
           <h1 className='text-2xl md:text-5xl'><i>Our Gallery</i></h1>
-          <p className='text-xs md:text-lg my-1'>This is our Gallery. There are many Items in here.<br></br>If you need any items please contact us in your email.</p>
+          <p className='text-xs md:text-lg my-1'>This is our Gallery. There are many Items in here.<br></br>If you need any items please contact us in our email.</p>
         </div>
         {/* title section end */}
         {/* gallery section start */}
