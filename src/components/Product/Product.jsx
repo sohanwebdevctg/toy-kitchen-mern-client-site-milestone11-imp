@@ -7,7 +7,15 @@ const Product = ({product}) => {
 
   return (
     <div>
-      
+      {/* product section start */}
+      <div>
+        <img src={image} className='w-full md:h-72'></img>
+        <div className='pt-2'>
+          <h1 className='md:text-3xl font-bold'>{name}</h1>
+          <p className='md:text-xl text-base'><i>{details}</i></p>
+        </div>
+      </div>
+      {/* product section end */}
     </div>
   );
 };

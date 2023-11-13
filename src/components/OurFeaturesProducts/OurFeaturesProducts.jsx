@@ -13,7 +13,7 @@ const OurFeaturesProducts = () => {
   },[])
 
   return (
-    <div className='my-10'>
+    <div className='my-20'>
       {/* ourFeaturesProducts section start */}
       <div className='container mx-auto'>
         {/* title section start */}
@@ -23,7 +23,7 @@ const OurFeaturesProducts = () => {
         </div>
         {/* title section end */}
         {/* products section start */}
-        <div className='grid md:grid-cols-3 grid-cols-1 md:gap-3 gap-2 md:mt-3 mt-2'>
+        <div className='grid md:grid-cols-3 grid-cols-1 md:gap-10 gap-5 md:mt-3 mt-2'>
           {
             products.map(product => <Product
             key={product._id}
