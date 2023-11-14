@@ -1,6 +1,7 @@
 import './AddAToys.css';
 import { useContext } from 'react';
 import { AuthContext } from './../../Provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const AddAToys = () => {
 
@@ -24,7 +25,23 @@ const AddAToys = () => {
 
     const data = {name, email, toyName, toyPrice, rating, quantity, image, category, description};
 
-    
+    fetch('http://localhost:5000/addAToys',{
+      method : 'POST',
+      headers : {'content-type' : 'application/json'},
+      body : JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(value => {
+      if(value){
+        Swal.fire({
+          title: "Success",
+          text: "Your data added successfully",
+          icon: "success"
+        });
+      }
+    })
+
+    form.reset();
 
 
   }
