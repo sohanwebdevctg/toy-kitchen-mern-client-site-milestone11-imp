@@ -21,7 +21,8 @@ const router = createBrowserRouter([
       },
       {
         path : '/shopCategoryDetails/:id',
-        element : <ShopCategoryDetails></ShopCategoryDetails>
+        element : <PrivateRoute><ShopCategoryDetails></ShopCategoryDetails></PrivateRoute>,
+        loader : ({params}) => fetch(`http://localhost:5000/shopCategoryDetails/${params.id}`)
       },
       {
         path : '/blogs',
