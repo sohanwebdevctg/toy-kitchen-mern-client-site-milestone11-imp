@@ -38,6 +38,12 @@ const AddAToys = () => {
           text: "Your data added successfully",
           icon: "success"
         });
+      }else{
+        Swal.fire({
+          title: "Error",
+          text: "Your data invalidate",
+          icon: "danger"
+        });
       }
     })
 

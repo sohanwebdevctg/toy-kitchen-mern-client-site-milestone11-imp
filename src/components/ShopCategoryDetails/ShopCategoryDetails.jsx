@@ -4,7 +4,7 @@ import './ShopCategoryDetails.css';
 const ShopCategoryDetails = () => {
 
   const data = useLoaderData();
-  console.log(data)
+
   const {image, description, quantity, rating, sellerEmail, sellerName, toyName, toyPrice} = data;
 
   const navigate = useNavigate();
