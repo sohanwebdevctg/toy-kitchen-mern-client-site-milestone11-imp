@@ -5,7 +5,7 @@ const ShopCategoryDetails = () => {
 
   const data = useLoaderData();
   console.log(data)
-  const {image, description, quantity, ratting, sellerEmail, sellerName, toyName, toyPrice} = data;
+  const {image, description, quantity, rating, sellerEmail, sellerName, toyName, toyPrice} = data;
 
   const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ const ShopCategoryDetails = () => {
                 <p className='md:text-xl text-sm mt-1'>Seller Name : {sellerName}</p>
                 <p className='md:text-xl text-sm mt-1'>Seller Email : {sellerEmail}</p>
                 <p className='md:text-xl text-sm mt-1'>Toy Price : {toyPrice}</p>
-                <p className='md:text-xl text-sm mt-1'>Rating : {ratting}</p>
+                <p className='md:text-xl text-sm mt-1'>Rating : {rating}</p>
                 <p className='md:text-xl text-sm mt-1'>Quantity : {quantity}</p>
                 <span className='md:text-xl text-sm mt-1'>Description : {description}</span>
                 <div onClick={backBtn} className='flex justify-end mt-3'>

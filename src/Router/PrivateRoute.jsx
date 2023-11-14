@@ -14,7 +14,7 @@ const PrivateRoute = ({children}) => {
     return <span className="loading loading-spinner loading-lg"></span>
   }
 
-  if(userData?.email){
+  if(userData){
     return children
   }
 
