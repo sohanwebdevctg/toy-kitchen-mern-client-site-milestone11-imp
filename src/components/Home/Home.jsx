@@ -23,7 +23,7 @@ const Home = () => {
       <OurFeaturesProducts></OurFeaturesProducts>
       {/* ourFeaturesProducts section end */}
       {/* shopByCategory section start */}
-      <ShopByCategory></ShopByCategory>
+      {/* <ShopByCategory></ShopByCategory> */}
       {/* shopByCategory section end */}
       {/* aboutOurStore section start */}
       <AboutOurStore></AboutOurStore>

@@ -5,8 +5,9 @@ import Blogs from "../components/Blogs/Blogs.jsx";
 import Home from "../components/Home/Home.jsx";
 import Register from "../components/Register/Register.jsx";
 import LogIn from "../components/LogIn/LogIn.jsx";
-import PrivateRoute from "./PrivateRoute.jsx";
-import ShopCategoryDetails from "../components/ShopCategoryDetails/ShopCategoryDetails.jsx";
+// import PrivateRoute from "./PrivateRoute.jsx";
+// import ShopCategoryDetails from "../components/ShopCategoryDetails/ShopCategoryDetails.jsx";
+import AddAToys from "../components/AddAToys/AddAToys.jsx";
 
 
 const router = createBrowserRouter([
@@ -20,13 +21,17 @@ const router = createBrowserRouter([
         element : <Home></Home>
       },
       {
-        path : '/shopCategoryDetails/:id',
-        element : <PrivateRoute><ShopCategoryDetails></ShopCategoryDetails></PrivateRoute>,
-        loader : ({params}) => fetch(`http://localhost:5000/shopCategoryDetails/${params.id}`)
+        path : '/addAToys',
+        element : <AddAToys></AddAToys>
       },
+      // {
+      //   path : '/shopCategoryDetails/:id',
+      //   element : <PrivateRoute><ShopCategoryDetails></ShopCategoryDetails></PrivateRoute>,
+      //   loader : ({params}) => fetch(`http://localhost:5000/shopCategoryDetails/${params.id}`)
+      // },
       {
         path : '/blogs',
-        element : <PrivateRoute><Blogs></Blogs></PrivateRoute>
+        element : <Blogs></Blogs>
       },
       {
         path : '/login',
