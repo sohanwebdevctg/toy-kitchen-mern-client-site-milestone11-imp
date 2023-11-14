@@ -14,13 +14,17 @@ const ShopCategory = () => {
     .then(data => setCategories(data))
   },[])
 
+  console.log(categories)
+
 
   // filtering categories data
   const kitchenSink = categories.filter(data => data.category === "kitchenSink").slice(0,6);
-  const kitchenPlaySet = categories.filter(data => data.category === "kitchenPlayset").slice(0,6);
+  const kitchenPlaySet = categories.filter(data => data.category === "kitchenPlaySet").slice(0,6);
   const cookWare = categories.filter(data => data.category === "cookware");
   const kitchenAccessories = categories.filter(data => data.category === "kitchenAccessories").slice(0,6);
   const miniKitchen = categories.filter(data => data.category === "miniKitchen").slice(0,6);
+
+
 
 
   return (

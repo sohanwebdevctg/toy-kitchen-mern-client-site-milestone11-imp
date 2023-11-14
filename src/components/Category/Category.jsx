@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './Category.css';
 
 // eslint-disable-next-line react/prop-types
@@ -18,9 +18,9 @@ const Category = ({category}) => {
           <p className='md:text-xl'><span className='font-bold'>Price:</span>${toyPrice}</p>
           <p className='md:text-xl'><span className='font-bold'>Rating:</span>{ratting}</p>
         </div>
-        <Link to={`/shopCategoryDetails/${_id}`} className='flex justify-end mt-3'>
+        {/* <Link to={`/shopCategoryDetails/${_id}`} className='flex justify-end mt-3'>
           <button className='block bg-black md:p-2 p-1 rounded text-slate-300 text-sm md:text-base'>Show Details</button>
-        </Link>
+        </Link> */}
       </div>
       {/* item section end */}
     </div>

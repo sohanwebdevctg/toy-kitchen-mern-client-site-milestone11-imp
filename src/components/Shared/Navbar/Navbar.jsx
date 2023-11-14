@@ -21,7 +21,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='hidden'>
+    <div>
       {/* desktop site start */}
       <div className='bg-gray-400'>
         <div className='container mx-auto'>
