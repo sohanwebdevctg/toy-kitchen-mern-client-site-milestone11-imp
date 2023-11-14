@@ -6,6 +6,7 @@ import Home from "../components/Home/Home.jsx";
 import Register from "../components/Register/Register.jsx";
 import LogIn from "../components/LogIn/LogIn.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
+import ShopCategoryDetails from "../components/ShopCategoryDetails/ShopCategoryDetails.jsx";
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path : '/',
         element : <Home></Home>
+      },
+      {
+        path : '/shopCategoryDetails/:id',
+        element : <ShopCategoryDetails></ShopCategoryDetails>
       },
       {
         path : '/blogs',

@@ -39,7 +39,7 @@ const ShopCategory = () => {
 
         {/* body section start */}
         <TabPanel>
-          <div className='md:flex md:mt-3 mt-2'>
+          <div className='md:flex md:gap-10 md:mt-3 mt-2'>
             {
               kitchenSink.map((category) => <Category
               key={category._id}
@@ -49,7 +49,7 @@ const ShopCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className='md:flex md:mt-3 mt-2'>
+          <div className='md:flex md:gap-10 md:mt-3 mt-2'>
             {
               kitchenPlaySet.map((category) => <Category
               key={category._id}
@@ -59,7 +59,7 @@ const ShopCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className='md:flex md:mt-3 mt-2'>
+          <div className='md:flex md:gap-10 md:mt-3 mt-2'>
             {
               cookWare.map((category) => <Category
               key={category._id}
@@ -69,7 +69,7 @@ const ShopCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className='md:flex md:mt-3 mt-2'>
+          <div className='md:flex md:gap-10 md:mt-3 mt-2'>
             {
               kitchenAccessories.map((category) => <Category
               key={category._id}
@@ -79,7 +79,7 @@ const ShopCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className='md:flex md:mt-3 mt-2'>
+          <div className='md:flex md:gap-10 md:mt-3 mt-2'>
             {
               miniKitchen.map((category) => <Category
               key={category._id}
@@ -96,5 +96,3 @@ const ShopCategory = () => {
 };
 
 export default ShopCategory;
-
-  // http://localhost:5000/shopByCategory
