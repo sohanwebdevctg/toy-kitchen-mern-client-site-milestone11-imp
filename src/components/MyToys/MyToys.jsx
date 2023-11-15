@@ -4,6 +4,7 @@ import { AuthContext } from './../../Provider/AuthProvider';
 import { Link, useNavigation } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import Loading from '../Loading/Loading';
+import useTitle from '../../hooks/useTitle';
 
 const MyToys = () => {
 
@@ -81,6 +82,8 @@ const MyToys = () => {
     
   }
 
+  // title
+  useTitle('My Toys')
   
   return (
     <div>
@@ -91,8 +94,8 @@ const MyToys = () => {
         <div className='bg-black text-enter p-2 my-5 md:w-[500px] w-[310px]'>
             <form onSubmit={searchPrice} className='grid grid-cols-2 md:gap-3 gap-2'>
               <select name="price">
-                <option value="high">High to Low Price</option>
-                <option value="low">Low to Heigh Price</option>
+                <option value="low">High to Low Price</option>
+                <option value="high">Low to Heigh Price</option>
               </select>
               <input type="submit" value="search" className='bg-red-700'></input>
             </form>

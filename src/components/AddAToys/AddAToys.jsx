@@ -4,6 +4,7 @@ import { AuthContext } from './../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
 import Loading from '../Loading/Loading';
 import { useNavigation } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const AddAToys = () => {
 
@@ -52,8 +53,10 @@ const AddAToys = () => {
 
     form.reset();
 
-
   }
+
+  // title
+  useTitle('Add A Toys')
 
   return (
     <div>

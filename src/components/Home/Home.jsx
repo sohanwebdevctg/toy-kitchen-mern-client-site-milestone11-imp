@@ -6,8 +6,13 @@ import OurGallery from '../OurGallery/OurGallery';
 import OurStore from '../OurStore/OurStore';
 import ShopByCategory from '../ShopByCategory/ShopByCategory';
 import './Home.css';
+import useTitle from './../../hooks/useTitle';
 
 const Home = () => {
+
+  //title
+  useTitle('Home')
+
   return (
     <div>
       {/* banner section start */}

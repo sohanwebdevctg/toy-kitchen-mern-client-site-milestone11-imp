@@ -1,6 +1,7 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import './ToyUpdate.css';
 import Swal from 'sweetalert2'
+import useTitle from '../../hooks/useTitle';
 
 const ToyUpdate = () => {
 
@@ -47,6 +48,9 @@ const ToyUpdate = () => {
 
 
   }
+
+  //title
+  useTitle('Toy Update')
 
 
   return (

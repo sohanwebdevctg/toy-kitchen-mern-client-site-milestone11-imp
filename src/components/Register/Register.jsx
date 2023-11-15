@@ -4,6 +4,7 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
 import google from '../../../public/logo/google.png'
+import useTitle from './../../hooks/useTitle';
 
 const Register = () => {
 
@@ -80,6 +81,9 @@ const Register = () => {
       }
     })
   }
+
+  // title
+  useTitle("Register")
 
   return (
     <div>

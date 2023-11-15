@@ -1,5 +1,6 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import './ToyDetails.css';
+import useTitle from '../../hooks/useTitle';
 
 const ToyDetails = () => {
 
@@ -12,6 +13,9 @@ const ToyDetails = () => {
   const backBtn = () => {
     navigate(-1)
   }
+
+  // title
+  useTitle('Toy Details')
 
   return (
     <div>

@@ -1,10 +1,14 @@
 import { useNavigation } from 'react-router-dom';
 import './Blogs.css'
 import Loading from '../Loading/Loading';
+import useTitle from '../../hooks/useTitle';
 
 const Blogs = () => {
 
   const navigation = useNavigation()
+
+  // title
+  useTitle("Blog")
 
 
   return (

@@ -2,6 +2,7 @@ import { Link, useLoaderData, useNavigation } from 'react-router-dom';
 import './AllToys.css';
 import { useState } from 'react';
 import Loading from './../Loading/Loading';
+import useTitle from '../../hooks/useTitle';
 
 const AllToys = () => {
 
@@ -22,9 +23,11 @@ const AllToys = () => {
     const value = data.filter(result => result.toyName === name);
     setData(value);
 
+    form.reset();
   }
 
-  
+  // title
+  useTitle('All Toys')
 
   return (
     <div>

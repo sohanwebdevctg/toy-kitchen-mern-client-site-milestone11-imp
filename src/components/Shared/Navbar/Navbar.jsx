@@ -23,14 +23,17 @@ const Navbar = () => {
   return (
     <div>
       {/* desktop site start */}
-      <div className='bg-black'>
+      <div className='bg-black hidden md:block fixed w-full top-0 right-0 left-0 z-50'>
         <div className='container mx-auto'>
-          
           <div className='flex justify-between items-center h-20'>
             {/* logo site start */}
             <div className='flex gap-3 items-center'>
-              <img src={logo} className='w-10 h-10 rounded-full'></img>
+              <Link to="/">
+                <img src={logo} className='w-10 h-10 rounded-full'></img>
+              </Link>
+              <Link>
               <h1 className='text-3xl font-bold text-slate-300'><em>ToyKitchen</em></h1>
+              </Link>
             </div>
             {/* logo site end */}
             {/* link site start */}
@@ -68,8 +71,79 @@ const Navbar = () => {
       </div>
       {/* desktop site end */}
       {/* mobile site start */}
-      <div className='hidden'></div>
+      <div className='md:hidden block fixed w-full top-0 right-0 left-0 z-50'>
+        <div className="navbar bg-black text-white">
+          <div className="navbar-start">
+            {/* logo site start */}
+            <div className='flex gap-1 items-center'>
+              <Link to="/">
+                <img src={logo} className='w-6 h-6 rounded-full'></img>
+              </Link>
+              <Link>
+              <h1 className='text-base font-bold'><em>ToyKitchen</em></h1>
+              </Link>
+            </div>
+            {/* logo site end */}
+          </div>
+        <div className="navbar-end">
+          <div className="dropdown">
+                  <label tabIndex={0} className="btn btn-ghost btn-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                  </label>
+                  <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black text-white rounded-box w-[300px] static right-1">
+                    <li>
+                      <NavLink to='/' className={({ isActive}) => isActive ? "text-red-700" : "text-white"}>Home</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to='/allToys' className={({ isActive}) => isActive ? "text-red-700" : "text-white"}>AllToys</NavLink>
+                    </li>
+                    {
+                      userData ? 
+                      <li>
+                      {
+                        userData ? <NavLink to='/myToys' className={({ isActive}) => isActive ? "text-red-700" : "text-white"}>MyToys</NavLink> : ''
+                      }
+                    </li>
+                      :''
+                    }
+                    {
+                      userData ?
+                      <li>
+                      {
+                      userData ? <NavLink to='/addAToys' className={({ isActive}) => isActive ? "text-red-700" : "text-white"}>AddAToys</NavLink> : ''
+                      }
+                    </li>
+                      : ''
+                    }
+                    <li>
+                      <NavLink to='/blogs' className={({ isActive}) => isActive ? "text-red-700" : "text-white"}>Blogs</NavLink>
+                    </li>
+                    <li>
+                    {
+                  userData ? <div className='flex flex-col items-start'>
+                  <div>
+                    <img className='w-8 h-8 rounded-full' src={userData && userData ? userData?.photoURL : ''} title={userData && userData ? userData?.displayName : 'No-Data'}></img>
+                  </div>
+                    <button onClick={outBtn} className='bg-red-600 py-1 px-2 rounded'>LogOut</button>
+                  </div> 
+                : <div>
+                <Link to="/login">
+                  <button className='bg-red-600 py-1 px-2 rounded'>LogIn</button>
+                  </Link>
+                </div>
+              }
+                    </li>
+              
+              
+              
+              
+                  </ul>
+                </div>
+          </div>
+        </div>
+      </div>
       {/* mobile site end */}
+
     </div>
   );
 };

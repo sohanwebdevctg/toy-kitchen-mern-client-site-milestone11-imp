@@ -1,5 +1,6 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import './ShopCategoryDetails.css';
+import useTitle from '../../hooks/useTitle';
 
 const ShopCategoryDetails = () => {
 
@@ -14,8 +15,12 @@ const ShopCategoryDetails = () => {
     navigate(-1)
   }
 
+  // title
+  useTitle('Shop Category Details')
 
   return (
+
+
     <div>
       {/* details section start */}
       <div className='container mx-auto mt-10 mb-5 md:mb-0'>

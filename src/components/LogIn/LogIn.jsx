@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
 import google from '../../../public/logo/google.png'
+import useTitle from './../../hooks/useTitle';
 
 const LogIn = () => {
 
@@ -78,6 +79,8 @@ const LogIn = () => {
       })
     }
 
+    // title
+    useTitle('LogIn')
 
   return (
     <div>

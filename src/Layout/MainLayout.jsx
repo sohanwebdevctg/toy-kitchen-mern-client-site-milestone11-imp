@@ -15,7 +15,7 @@ const MainLayout = () => {
       {/* this is navbar section end */}
       {/* this is router section start */}
       {navigation.state === "loading" ? <Loading></Loading> : ''}
-      <div className='md:min-h-[520px]'>
+      <div className='md:min-h-[520px] md:mt-28 mt-20'>
         <Outlet></Outlet>
       </div>
       {/* this is router section end */}
