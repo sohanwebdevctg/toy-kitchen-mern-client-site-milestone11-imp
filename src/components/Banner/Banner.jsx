@@ -4,8 +4,8 @@ import kitchen1 from '../../../public/kitchen/kitchen1.webp';
 import kitchen2 from '../../../public/kitchen/kitchen2.webp';
 import kitchen3 from '../../../public/kitchen/kitchen3.webp';
 import kitchen4 from '../../../public/kitchen/kitchen4.jfif';
-import side1 from '../../../public/bannerImage/sideKitchen1.webp';
-import side2 from '../../../public/bannerImage/sideKitchen2.webp';
+import side1 from '../../../public/bannerImage/sideKitchen1.jpg';
+import side2 from '../../../public/bannerImage/sideKitchen2.jpg';
 
 const Banner = () => {
   return (
@@ -89,7 +89,7 @@ const Banner = () => {
               <img src={side1} className='h-60 w-full'></img>
             </div>
             <div className='md:h-[250px] flex justify-center'>
-              <img src={side2} className='h-60 w-full'></img>
+              <img src={side2} className='h-60 w-full p-1'></img>
             </div>
           </div>
           {/* banner right site end */}
