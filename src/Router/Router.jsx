@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path : '/addAToys',
-        element : <AddAToys></AddAToys>
+        element : <PrivateRoute><AddAToys></AddAToys></PrivateRoute>
       },
       {
         path : '/shopCategoryDetails/:id',
@@ -45,11 +45,12 @@ const router = createBrowserRouter([
       },
       {
         path : '/myToys',
-        element : <MyToys></MyToys>
+        element : <PrivateRoute><MyToys></MyToys></PrivateRoute>
       },
       {
         path : 'toyUpdate/:id',
-        element : <ToyUpdate></ToyUpdate>
+        element : <PrivateRoute><ToyUpdate></ToyUpdate></PrivateRoute>,
+        loader : ({params}) => fetch(`http://localhost:5000/toyUpdate/${params.id}`)
       },
       {
         path : '/blogs',

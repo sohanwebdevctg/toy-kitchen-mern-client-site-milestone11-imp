@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div>
       {/* footer section start */}
-      <div className='bg-slate-400'>
+      <div className='bg-black text-slate-400'>
         <div className='container mx-auto'>
           {/* footer one start */}
           <footer className="footer p-10  grid grid-cols-2 md:grid-cols-5">
@@ -47,7 +47,7 @@ const Footer = () => {
           {/* footer two start */}
           <footer className="footer footer-center p-4 text-base-content">
             <aside>
-              <p>Copyright © 2023 - All right reserved by ToyKitchen Industries Ltd</p>
+              <p className='text-slate-400'>Copyright © 2023 - All right reserved by ToyKitchen Industries Ltd</p>
             </aside>
           </footer>
           {/* footer two end */}

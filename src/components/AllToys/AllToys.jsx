@@ -1,8 +1,11 @@
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigation } from 'react-router-dom';
 import './AllToys.css';
 import { useState } from 'react';
+import Loading from './../Loading/Loading';
 
 const AllToys = () => {
+
+  const navigation = useNavigation();
 
   const loaderData = useLoaderData()
   const [data, setData] = useState(loaderData)
@@ -21,8 +24,11 @@ const AllToys = () => {
 
   }
 
+  
+
   return (
     <div>
+      {navigation.state === 'loading' ? <Loading></Loading> : ''}
       {/* allToys section start */}
         <div className='container mx-auto my-10'>
           {/* search section start */}

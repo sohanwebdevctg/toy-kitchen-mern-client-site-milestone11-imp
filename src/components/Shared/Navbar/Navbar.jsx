@@ -3,7 +3,7 @@ import logo from '../../../../public/logo/toyKitchenImage.jpg';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from './../../../Provider/AuthProvider';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
 
@@ -23,26 +23,27 @@ const Navbar = () => {
   return (
     <div>
       {/* desktop site start */}
-      <div className='bg-gray-400'>
+      <div className='bg-black'>
         <div className='container mx-auto'>
+          
           <div className='flex justify-between items-center h-20'>
             {/* logo site start */}
             <div className='flex gap-3 items-center'>
               <img src={logo} className='w-10 h-10 rounded-full'></img>
-              <h1 className='text-3xl font-bold'><em>ToyKitchen</em></h1>
+              <h1 className='text-3xl font-bold text-slate-300'><em>ToyKitchen</em></h1>
             </div>
             {/* logo site end */}
             {/* link site start */}
             <div className='flex gap-10'>
-              <NavLink to='/' className={({ isActive}) => isActive ? "text-red-700" : ""}>Home</NavLink>
-              <NavLink to='/allToys' className={({ isActive}) => isActive ? "text-red-700" : ""}>AllToys</NavLink>
+              <NavLink to='/' className={({ isActive}) => isActive ? "text-red-700" : "text-white"}>Home</NavLink>
+              <NavLink to='/allToys' className={({ isActive}) => isActive ? "text-red-700" : "text-white"}>AllToys</NavLink>
               {
-                userData ? <NavLink to='/myToys' className={({ isActive}) => isActive ? "text-red-700" : ""}>MyToys</NavLink> : ''
+                userData ? <NavLink to='/myToys' className={({ isActive}) => isActive ? "text-red-700" : "text-white"}>MyToys</NavLink> : ''
               }
               {
-                userData ? <NavLink to='/addAToys' className={({ isActive}) => isActive ? "text-red-700" : ""}>AddAToys</NavLink> : ''
+                userData ? <NavLink to='/addAToys' className={({ isActive}) => isActive ? "text-red-700" : "text-white"}>AddAToys</NavLink> : ''
               }
-              <NavLink to='/blogs' className={({ isActive}) => isActive ? "text-red-700" : ""}>Blogs</NavLink>
+              <NavLink to='/blogs' className={({ isActive}) => isActive ? "text-red-700" : "text-white"}>Blogs</NavLink>
             </div>
             {/* link site end */}
             {/* login site start */}

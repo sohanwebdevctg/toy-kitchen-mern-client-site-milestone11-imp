@@ -2,10 +2,13 @@ import './AddAToys.css';
 import { useContext } from 'react';
 import { AuthContext } from './../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
+import Loading from '../Loading/Loading';
+import { useNavigation } from 'react-router-dom';
 
 const AddAToys = () => {
 
   const {userData} = useContext(AuthContext);
+  const navigation = useNavigation()
   
   const addAToys = (event) => {
     event.preventDefault();
@@ -54,6 +57,7 @@ const AddAToys = () => {
 
   return (
     <div>
+      {navigation.state === 'loading' ? <Loading></Loading> : ''}
       {/* addAToys section start */}
       <div className='container mx-auto my-20'>
         {/* title section start */}
@@ -71,7 +75,7 @@ const AddAToys = () => {
               </div>
               <div className="grid md:grid-cols-2 grid-cols-1 md:gap-5 mt-2 gap-3">
                 <input type="text" name="toyName"  required className='md:p-2'placeholder='enter your toy name'/>
-                <input type="text" name="toyPrice" required className='md:p-2' placeholder='enter your toy price'/>
+                <input type="number" name="toyPrice" required className='md:p-2' placeholder='enter your toy price'/>
               </div>
               <div className="grid md:grid-cols-2 grid-cols-1 md:gap-5 mt-2 gap-3">
                 <input type="number" name="rating"  required className='md:p-2'placeholder='enter your toy rating' min="0" max="5"/>
