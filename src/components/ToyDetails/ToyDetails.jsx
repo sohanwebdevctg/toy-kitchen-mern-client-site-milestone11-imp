@@ -5,7 +5,7 @@ const ToyDetails = () => {
 
   const data = useLoaderData();
 
-  const {image, description, quantity, rating, sellerEmail, sellerName, toyName, toyPrice} = data;
+  const {image, description, quantity, rating, email, name, toyName, toyPrice} = data;
 
   const navigate = useNavigate();
 
@@ -24,8 +24,8 @@ const ToyDetails = () => {
               </div>
               <div className='w-full'>
                 <h2 className='md:text-2xl text-xl text-red-700 font-bold'>Toy Name : {toyName}</h2>
-                <p className='md:text-xl text-sm mt-1'>Seller Name : {sellerName}</p>
-                <p className='md:text-xl text-sm mt-1'>Seller Email : {sellerEmail}</p>
+                <p className='md:text-xl text-sm mt-1'>Seller Name : {name}</p>
+                <p className='md:text-xl text-sm mt-1'>Seller Email : {email}</p>
                 <p className='md:text-xl text-sm mt-1'>Toy Price : {toyPrice}</p>
                 <p className='md:text-xl text-sm mt-1'>Rating : {rating}</p>
                 <p className='md:text-xl text-sm mt-1'>Quantity : {quantity}</p>

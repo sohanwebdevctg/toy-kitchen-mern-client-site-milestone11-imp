@@ -14,7 +14,6 @@ const ShopCategory = () => {
     .then(data => setCategories(data))
   },[])
 
-  console.log(categories)
 
 
   // filtering categories data

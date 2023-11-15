@@ -9,6 +9,7 @@ const AllToys = () => {
   
   let i = 1;
 
+  // search function for toy name
   const searchToy = (event) => {
     event.preventDefault()
     const form = event.target;
@@ -16,7 +17,7 @@ const AllToys = () => {
     const name = form.toy.value;
     
     const value = data.filter(result => result.toyName === name);
-    setData(value)
+    setData(value);
 
   }
 
@@ -25,9 +26,9 @@ const AllToys = () => {
       {/* allToys section start */}
         <div className='container mx-auto my-10'>
           {/* search section start */}
-          <div className='bg-black text-enter p-2 my-5 md:w-[500px]'>
-            <form onSubmit={searchToy} className='grid grid-cols-2 gap-3'>
-              <input type="text" name="toy" placeholder='search your toy name'></input>
+          <div className='bg-black text-enter p-2 my-5 md:w-[500px] w-[310px]'>
+            <form onSubmit={searchToy} className='grid grid-cols-2 md:gap-3 gap-2'>
+              <input type="text" name="toy" placeholder='search your toy name' ></input>
               <input type="submit" value="search" className='bg-red-700'></input>
             </form>
           </div>
@@ -49,7 +50,7 @@ const AllToys = () => {
               </thead>
               <tbody>
                 {/* row 1 */}
-                {data.map(toy => (<tr key={toy._id}><td>{i++}</td><td>{toy.name}</td><td>{toy.toyName}</td><td>{toy.category}</td><td>${toy.toyPrice}</td><td>{toy.quantity}</td><td><Link to={`/toyDetails/${toy._id}`}><button className='bg-black text-white p-1 rounded'>Details</button></Link></td></tr>))}
+                {data.slice(0,20).map(toy => (<tr key={toy._id}><td>{i++}</td><td>{toy.name}</td><td>{toy.toyName}</td><td>{toy.category}</td><td>${toy.toyPrice}</td><td>{toy.quantity}</td><td><Link to={`/toyDetails/${toy._id}`}><button className='bg-black text-white p-1 rounded'>Details</button></Link></td></tr>))}
                 
               </tbody>
             </table>

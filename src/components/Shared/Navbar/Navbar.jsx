@@ -36,7 +36,9 @@ const Navbar = () => {
             <div className='flex gap-10'>
               <NavLink to='/' className={({ isActive}) => isActive ? "text-red-700" : ""}>Home</NavLink>
               <NavLink to='/allToys' className={({ isActive}) => isActive ? "text-red-700" : ""}>AllToys</NavLink>
-              <NavLink to='/myToys' className={({ isActive}) => isActive ? "text-red-700" : ""}>MyToys</NavLink>
+              {
+                userData ? <NavLink to='/myToys' className={({ isActive}) => isActive ? "text-red-700" : ""}>MyToys</NavLink> : ''
+              }
               {
                 userData ? <NavLink to='/addAToys' className={({ isActive}) => isActive ? "text-red-700" : ""}>AddAToys</NavLink> : ''
               }
