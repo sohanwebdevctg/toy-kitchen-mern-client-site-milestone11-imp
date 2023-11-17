@@ -27,12 +27,12 @@ const router = createBrowserRouter([
       {
         path : 'allToys',
         element : <AllToys></AllToys>,
-        loader : () => fetch('https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/allToys')
+        loader : () => fetch('https://toy-kitchen-data.vercel.app/allToys')
       },
       {
         path : '/toyDetails/:id',
         element : <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-        loader : ({params}) => fetch(`https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/toyDetails/${params.id}`)
+        loader : ({params}) => fetch(`https://toy-kitchen-data.vercel.app/toyDetails/${params.id}`)
       },
       {
         path : '/addAToys',
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path : '/shopCategoryDetails/:id',
         element : <PrivateRoute><ShopCategoryDetails></ShopCategoryDetails></PrivateRoute>,
-        loader : ({params}) => fetch(`https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/shopCategoryDetails/${params.id}`)
+        loader : ({params}) => fetch(`https://toy-kitchen-data.vercel.app/shopCategoryDetails/${params.id}`)
       },
       {
         path : '/myToys',
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       {
         path : 'toyUpdate/:id',
         element : <PrivateRoute><ToyUpdate></ToyUpdate></PrivateRoute>,
-        loader : ({params}) => fetch(`https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/toyUpdate/${params.id}`)
+        loader : ({params}) => fetch(`https://toy-kitchen-data.vercel.app/toyUpdate/${params.id}`)
       },
       {
         path : '/blogs',

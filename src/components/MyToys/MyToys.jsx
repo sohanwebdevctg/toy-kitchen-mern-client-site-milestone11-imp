@@ -13,7 +13,7 @@ const MyToys = () => {
   let i = 1;
   const navigation = useNavigation();
 
-  const url = `https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/myToys?email=${userData?.email}`
+  const url = `https://toy-kitchen-data.vercel.app/myToys?email=${userData?.email}`
 
   useEffect(() => {
     fetch(url)
@@ -34,7 +34,7 @@ const MyToys = () => {
       if (result.isConfirmed) {
         const id = _id;
     if(id){
-      fetch(`http://localhost:5000/deleteData/${id}`,{
+      fetch(`https://toy-kitchen-data.vercel.app/deleteData/${id}`,{
       method : 'DELETE'
       })
       .then(res => res.json())
@@ -64,14 +64,14 @@ const MyToys = () => {
     const form = event.target;
     const name = form.price.value;
 
-    fetch('https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/high')
+    fetch('https://toy-kitchen-data.vercel.app/high')
     .then(res => res.json())
     .then(newData => {
       if(name === "high"){
         setData(newData)
       }
     })
-    fetch('https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/low')
+    fetch('https://toy-kitchen-data.vercel.app/low')
     .then(res => res.json())
     .then(newData => {
       if(name === "low"){

@@ -7,7 +7,7 @@ const OurFeaturesProducts = () => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    fetch('https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/featuresProducts')
+    fetch('https://toy-kitchen-data.vercel.app/featuresProducts')
     .then(res => res.json())
     .then(data => setProducts(data))
   },[])

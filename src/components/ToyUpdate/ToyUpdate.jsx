@@ -26,7 +26,7 @@ const ToyUpdate = () => {
 
     const update = {name, email, toyName, toyPrice, rating, quantity, image, category, description};
 
-    fetch(`https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/toyUpdate/${data?._id}`,{
+    fetch(`https://toy-kitchen-data.vercel.app/toyUpdate/${data?._id}`,{
       method : 'PUT',
       headers : {'content-type' : 'application/json'},
       body : JSON.stringify(update)
@@ -43,10 +43,8 @@ const ToyUpdate = () => {
       }
     })
 
-
     form.reset();
-
-
+    
   }
 
   //title
