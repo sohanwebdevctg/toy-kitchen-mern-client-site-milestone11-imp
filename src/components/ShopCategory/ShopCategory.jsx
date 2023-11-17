@@ -9,7 +9,7 @@ const ShopCategory = () => {
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/shopByCategory')
+    fetch('https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/shopByCategory')
     .then(res => res.json())
     .then(data => setCategories(data))
   },[])

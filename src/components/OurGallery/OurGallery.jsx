@@ -8,7 +8,7 @@ const OurGallery = () => {
   const [gallery, setGallery] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/gallery')
+    fetch('https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/gallery')
     .then(res => res.json())
     .then(data => setGallery(data))
   },[])

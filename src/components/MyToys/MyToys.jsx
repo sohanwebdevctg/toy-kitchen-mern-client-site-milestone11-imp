@@ -13,7 +13,7 @@ const MyToys = () => {
   let i = 1;
   const navigation = useNavigation();
 
-  const url = `http://localhost:5000/myToys?email=${userData?.email}`
+  const url = `https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/myToys?email=${userData?.email}`
 
   useEffect(() => {
     fetch(url)
@@ -64,14 +64,14 @@ const MyToys = () => {
     const form = event.target;
     const name = form.price.value;
 
-    fetch('http://localhost:5000/high')
+    fetch('https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/high')
     .then(res => res.json())
     .then(newData => {
       if(name === "high"){
         setData(newData)
       }
     })
-    fetch('http://localhost:5000/low')
+    fetch('https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/low')
     .then(res => res.json())
     .then(newData => {
       if(name === "low"){
@@ -94,8 +94,8 @@ const MyToys = () => {
         <div className='bg-black text-enter p-2 my-5 md:w-[500px] w-[310px]'>
             <form onSubmit={searchPrice} className='grid grid-cols-2 md:gap-3 gap-2'>
               <select name="price">
-                <option value="low">High to Low Price</option>
-                <option value="high">Low to Heigh Price</option>
+                <option value="high">High to Low Price</option>
+                <option value="low">Low to Heigh Price</option>
               </select>
               <input type="submit" value="search" className='bg-red-700'></input>
             </form>
@@ -118,7 +118,6 @@ const MyToys = () => {
               <tbody>
                 {/* row 1 */}
                 {data.map(toy => (<tr key={toy._id}><td>{i++}</td><td><img className='w-20 h-20' src={toy.image}></img></td><td>{toy.toyName}</td><td>${toy.toyPrice}</td><td>{toy.quantity}</td><td><Link to={`/toyUpdate/${toy._id}`}><button className='bg-black text-white p-1 rounded'>Update</button></Link><button onClick={() => deleteData(toy._id)} className='bg-red-700 text-white p-1 rounded ml-1'>Delete</button></td></tr>))}
-                
               </tbody>
             </table>
           </div>

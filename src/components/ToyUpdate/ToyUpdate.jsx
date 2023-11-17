@@ -26,7 +26,7 @@ const ToyUpdate = () => {
 
     const update = {name, email, toyName, toyPrice, rating, quantity, image, category, description};
 
-    fetch(`http://localhost:5000/toyUpdate/${data?._id}`,{
+    fetch(`https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/toyUpdate/${data?._id}`,{
       method : 'PUT',
       headers : {'content-type' : 'application/json'},
       body : JSON.stringify(update)
@@ -81,11 +81,7 @@ const ToyUpdate = () => {
               <div className="grid md:grid-cols-2 grid-cols-1 md:gap-5 mt-2 gap-3">
                 <input type="text" name="image" required className='md:p-2' placeholder='enter your image link' defaultValue={data?.image}/>
                 <select name="category">
-                  <option value="kitchenSink">Kitchen Sink</option>
-                  <option value="kitchenPlaySet">Kitchen PlaySet</option>
-                  <option value="kitchenAccessories">Kitchen Accessories</option>
-                  <option value="cookware">Cook Ware</option>
-                  <option value="miniKitchen">Mini Kitchen</option>
+                  <option value={data?.category}>{data?.category}</option>
                 </select>
               </div>
               <div className="grid md:grid-cols-1 grid-cols-1 md:gap-5 mt-2 gap-3">

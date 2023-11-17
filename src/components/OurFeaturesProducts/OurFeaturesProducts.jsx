@@ -7,7 +7,7 @@ const OurFeaturesProducts = () => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/featuresProducts')
+    fetch('https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/featuresProducts')
     .then(res => res.json())
     .then(data => setProducts(data))
   },[])
@@ -39,5 +39,3 @@ const OurFeaturesProducts = () => {
 };
 
 export default OurFeaturesProducts;
-
-// http://localhost:5000/featuresProducts

@@ -29,7 +29,7 @@ const AddAToys = () => {
 
     const data = {name, email, toyName, toyPrice, rating, quantity, image, category, description};
 
-    fetch('http://localhost:5000/addAToys',{
+    fetch('https://toy-kitchen-data-1c9lfyoda-sohanwebdevctgs-projects.vercel.app/addAToys',{
       method : 'POST',
       headers : {'content-type' : 'application/json'},
       body : JSON.stringify(data)
