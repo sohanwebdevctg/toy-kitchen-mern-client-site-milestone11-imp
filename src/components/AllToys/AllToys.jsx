@@ -59,7 +59,7 @@ const AllToys = () => {
               </thead>
               <tbody>
                 {/* row 1 */}
-                {data.slice(0,20).map(toy => (<tr key={toy._id}><td>{i++}</td><td>{toy.name}</td><td>{toy.toyName}</td><td>{toy.category}</td><td>${toy.toyPrice}</td><td>{toy.quantity}</td><td><Link to={`/toyDetails/${toy._id}`}><button className='bg-black text-white p-1 rounded'>Details</button></Link></td></tr>))}
+                {data.map(toy => (<tr key={toy._id}><td>{i++}</td><td>{toy.name}</td><td>{toy.toyName}</td><td>{toy.category}</td><td>${toy.toyPrice}</td><td>{toy.quantity}</td><td><Link to={`/toyDetails/${toy._id}`}><button className='bg-black text-white p-1 rounded'>Details</button></Link></td></tr>))}
                 
               </tbody>
             </table>
